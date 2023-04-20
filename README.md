@@ -9,6 +9,7 @@ In this repository we will see all the screens separated in different html files
 - Construction and use of components.
 
 ###### Powered by Chainsaw coder
+-------------
 
 # ES-version
 ## html-css-course-frontend-dev-practice
