@@ -32,6 +32,7 @@ nav{
 }
 .menu{
     display: none;
+    cursor: pointer;
 }
 .logo{
     width: 120px;
@@ -93,6 +94,7 @@ nav{
     display: flex;
     justify-content: center;
 }
+
 /* menu de perfil */
 .desktop-menu{
     background: var(--white);
@@ -132,21 +134,58 @@ nav{
     font-size: var(--sm);
 }
 
+/* menu mobile */
+.mobile-menu{
+    position: absolute;
+    top: 59px;
 
+}
+.mobile-menu a{
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+    
+}
+.mobile-menu ul{
+    padding: 0%;
+    margin: 20px 0 0;
+    list-style: none;
+}
+.mobile-menu ul:nth-child(1){
+    border-bottom: 1px solid var(--very-light-pink);
+}
+.mobile-menu ul:last-child{
+    margin-bottom: 4px;
+}
+.mobile-menu ul li{
+    margin-bottom: 24px;
+}
+.mobile-menu .email{
+    font-size: var(--sm);
+    font-weight: 300;
+}
+.mobile-menu .sign-out{
+    font-size: var(--sm);
+    color: var(--hospital-green);
+}
 
 
 /* MEDI@ QUERYS */
-/* media query de navbar */
 @media (max-width: 640px) {
     .menu{
         display: block;
         width: 20px;
         
     }
-    .navbar-left ul{
+    .navbar-left ul,
+    .desktop-menu,
+    .navbar-email{
         display: none;
     }
-    .navbar-email{
+    
+}
+@media (min-width: 641px) {
+    .mobile-menu{
         display: none;
     }
 }
