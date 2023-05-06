@@ -1,15 +1,33 @@
 const menuEmail = document.querySelector('.navbar-email');
-const desktopMenu = document.querySelector('.desktop-menu');
-const mobileMenu = document.querySelector('.mobile-menu');
-const burguerMenu = document.querySelector('.menu');
+const desktopMenuView = document.querySelector('.desktop-menu');
+const mobileMenuView = document.querySelector('.mobile-menu');
+const burguerMenuBtn = document.querySelector('.menu');
+const shopingCartView = document.querySelector('.product-detail')
+const shopingCartBtn = document.querySelector('.navbar-shoping-cart')
 
-burguerMenu.addEventListener('click', ()=>{
-    mobileMenu.classList.toggle('inactive')
+shopingCartBtn.addEventListener('click', ()=>{
+    const isMobileMenuViewClosed = mobileMenuView.classList.contains('inactive');
+    const isDestopMenuViewClosed = desktopMenuView.classList.contains('inactive');
+    if (!isMobileMenuViewClosed || !isDestopMenuViewClosed) {
+        mobileMenuView.classList.add('inactive')
+        desktopMenuView.classList.add('inactive')
+    }
+    shopingCartView.classList.toggle('inactive')
 })
 
-menuEmail.addEventListener('click', toggleDesktopMenu)
+burguerMenuBtn.addEventListener('click', ()=>{
+    const isShopingCartViewClosed = shopingCartView.classList.contains('inactive');
+    if (!isShopingCartViewClosed) {
+        shopingCartView.classList.add('inactive')
+    }
+    mobileMenuView.classList.toggle('inactive')
+})
 
-function toggleDesktopMenu() {
-    //classList.toggle() pone o quita la clase inactive dependiendo de si la tiene o no
-    desktopMenu.classList.toggle('inactive')
-}
+menuEmail.addEventListener('click', ()=>{
+    const isShopingCartViewClosed = shopingCartView.classList.contains('inactive');
+    if (!isShopingCartViewClosed) {
+        shopingCartView.classList.add('inactive')
+    }
+    desktopMenuView.classList.toggle('inactive')
+})
+

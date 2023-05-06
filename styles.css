@@ -14,9 +14,9 @@ body{
     margin: 0%;
 }
 *{
-box-sizing: border-box;
-margin: 0;
-padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 .inactive{
     display: none;
@@ -136,8 +136,9 @@ nav{
 
 /* menu mobile */
 .mobile-menu{
+    background-color: var(--white);
     position: absolute;
-    top: 59px;
+    top: 60px;
 
 }
 .mobile-menu a{
@@ -169,6 +170,86 @@ nav{
     color: var(--hospital-green);
 }
 
+/* carrito de compras */
+.product-detail{
+    background-color: var(--white);
+    width: 360px;
+    padding-bottom: 24px;
+    position: absolute;
+    right: 0;
+}
+.my-order-content{
+    padding: 12px;
+}
+.cont-title{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 24px;
+}
+.cont-title img{
+    transform: rotate(180deg);
+}
+.title{
+    margin-left: 16px;
+    font-size: var(--lg);
+    font-weight: bold;
+}
+
+.order-t{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: center;
+    background-color: var(--text-input-field);
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 16px;
+}
+.order-t p:nth-child(1){
+    display: flex;
+    flex-direction: column;
+}
+.order-t p:nth-child(2){
+    text-align: end;
+}
+.shoping-cart{
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: center;
+}
+.shoping-cart figure{
+    margin: 0;
+}
+.shoping-cart figure img{
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.shoping-cart p:nth-child(2){
+    color: var(--very-light-pink);
+}
+.shoping-cart p:nth-child(3){
+    font-size: var(--md);
+    font-weight: bold;
+}
+.primary-button{
+    background-color: var(--hospital-green);
+    border-radius: 8px;
+    border: none;
+    color: var(--white);
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+    height: 40px;
+}
+.navbar-shoping-cart{
+    cursor: pointer;
+}
 
 /* MEDI@ QUERYS */
 @media (max-width: 640px) {
@@ -182,7 +263,12 @@ nav{
     .navbar-email{
         display: none;
     }
-    
+    .product-detail{
+        width: 100%;
+    }
+    .product-detail > img:nth-child(2){
+        width: 100%;
+    }
 }
 @media (min-width: 641px) {
     .mobile-menu{
