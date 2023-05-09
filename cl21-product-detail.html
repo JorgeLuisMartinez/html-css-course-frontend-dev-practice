@@ -31,13 +31,13 @@
         padding: 0;
         } */
 
-        .product-detail{
+        .product-detailed{
             width: 360px;
             padding-bottom: 24px;
             position: absolute;
             right: 0;
         }
-        .product-detail-close{
+        .product-detailed-close{
             background: var(--white);
             width: 14px;
             height: 14px;
@@ -48,10 +48,10 @@
             padding: 12px;
             border-radius: 50%;
         }       
-        .product-detail-close img:hover{
+        .product-detailed-close img:hover{
             cursor: pointer;
         }
-        .product-detail > img:nth-child(2){
+        .product-detailed > img:nth-child(2){
             width: 360px;
             height: 360px;
             object-fit: cover;
@@ -73,33 +73,33 @@
             align-items: center;
             justify-content: center;
         }
-        .product-info{
+        .product-detailed-info{
             margin: 24px 24px 0 24px;
         }
-        .product-info p:nth-child(1){
+        .product-detailed-info p:nth-child(1){
             font-weight: bold;
             font-size: var(--md);
             margin-top: 0%;
             margin-bottom: 4px
         }
-        .product-info p:nth-child(2){
+        .product-detailed-info p:nth-child(2){
             color: var(--very-light-pink);
             font-size: var(--md);
             margin-top: 0%;
             margin-bottom: 36px
         }
-        .product-info p:nth-child(3){
+        .product-detailed-info p:nth-child(3){
             color: var(--very-light-pink);
             font-size: var(--sm);
             margin-top: 0%;
             margin-bottom: 36px
         }
         @media (max-width: 640px) {
-            .product-detail{
+            .product-detailed{
                 width: 100%;
 
             }
-            .product-detail > img:nth-child(2){
+            .product-detailed > img:nth-child(2){
                 width: 100%;
             }
         }
@@ -107,12 +107,12 @@
     </style>
 </head>
 <body>
-    <aside class="product-detail">
-        <div class="product-detail-close">
+    <aside class="product-detailed">
+        <div class="product-detailed-close">
             <img src="./icons/icon_close.png" alt="close">
         </div>
         <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
-        <div class="product-info">
+        <div class="product-detailed-info">
             <p>$35,00</p>
             <p>Bike</p>
             <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
