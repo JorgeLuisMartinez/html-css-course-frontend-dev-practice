@@ -7,32 +7,49 @@ const shopingCartBtn = document.querySelector('.navbar-shoping-cart');
 // array de productos
 const cardsContainer = document.querySelector('.cards-container');
 const productList = [];
+const productDetailContainer = document.querySelector('.product-detailed');
+const productDetailCloseBtn = document.querySelector('.product-detailed-close');
 
 
 shopingCartBtn.addEventListener('click', ()=>{
     const isMobileMenuViewClosed = mobileMenuView.classList.contains('inactive');
     const isDestopMenuViewClosed = desktopMenuView.classList.contains('inactive');
-    if (!isMobileMenuViewClosed || !isDestopMenuViewClosed) {
-        mobileMenuView.classList.add('inactive')
-        desktopMenuView.classList.add('inactive')
+    const isproductDetailContainerClosed = productDetailContainer.classList.contains('inactive');
+    if (!isMobileMenuViewClosed || !isDestopMenuViewClosed || !isproductDetailContainerClosed) {
+        mobileMenuView.classList.add('inactive');
+        desktopMenuView.classList.add('inactive');
+        productDetailContainer.classList.add('inactive');
     }
     shopingCartView.classList.toggle('inactive')
 })
 
 burguerMenuBtn.addEventListener('click', ()=>{
     const isShopingCartViewClosed = shopingCartView.classList.contains('inactive');
-    if (!isShopingCartViewClosed) {
-        shopingCartView.classList.add('inactive')
+    const isproductDetailContainerClosed = productDetailContainer.classList.contains('inactive');
+    if (!isShopingCartViewClosed || !isproductDetailContainerClosed) {
+        shopingCartView.classList.add('inactive');
+        productDetailContainer.classList.add('inactive');
     }
     mobileMenuView.classList.toggle('inactive')
 })
 
 menuEmail.addEventListener('click', ()=>{
     const isShopingCartViewClosed = shopingCartView.classList.contains('inactive');
-    if (!isShopingCartViewClosed) {
-        shopingCartView.classList.add('inactive')
+    const isproductDetailContainerClosed = productDetailContainer.classList.contains('inactive');
+    if (!isShopingCartViewClosed || !isproductDetailContainerClosed) {
+        shopingCartView.classList.add('inactive');
+        productDetailContainer.classList.add('inactive');
     }
     desktopMenuView.classList.toggle('inactive')
+})
+productDetailCloseBtn.addEventListener('click',()=>{
+    const isShopingCartViewClosed = shopingCartView.classList.contains('inactive');
+    const isDestopMenuViewClosed = desktopMenuView.classList.contains('inactive');
+    if(!isShopingCartViewClosed || !isDestopMenuViewClosed){
+        shopingCartView.classList.add('inactive');
+        desktopMenuView.classList.add('inactive');
+    }
+    productDetailContainer.classList.toggle('inactive');
 })
 
 // Creando las products cards
@@ -87,6 +104,7 @@ productList.push({
     image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
 })
 
+
 function renderProducts(arr){
     for (product of arr) {
         // En este primer bloque de codigo creamos la estructura de una product cart pero dinamica
@@ -95,6 +113,9 @@ function renderProducts(arr){
     
         const img = document.createElement('img');
         img.setAttribute('src', product.image)
+        img.addEventListener('click', ()=>{
+            productDetailContainer.classList.remove('inactive');
+        })
     
         const productInfo = document.createElement('div');
         productInfo.classList.add('product-info');
