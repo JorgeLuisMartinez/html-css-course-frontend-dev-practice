@@ -9,6 +9,7 @@ const cardsContainer = document.querySelector('.cards-container');
 const productList = [];
 const productDetailContainer = document.querySelector('.product-detailed');
 const productDetailCloseBtn = document.querySelector('.product-detailed-close');
+const darkBg = document.querySelector('.darken');
 
 
 shopingCartBtn.addEventListener('click', ()=>{
@@ -19,8 +20,10 @@ shopingCartBtn.addEventListener('click', ()=>{
         mobileMenuView.classList.add('inactive');
         desktopMenuView.classList.add('inactive');
         productDetailContainer.classList.add('inactive');
+        darkBg.classList.remove('darken');
     }
     shopingCartView.classList.toggle('inactive')
+    darkBg.classList.toggle('inactive');
 })
 
 burguerMenuBtn.addEventListener('click', ()=>{
@@ -39,6 +42,7 @@ menuEmail.addEventListener('click', ()=>{
     if (!isShopingCartViewClosed || !isproductDetailContainerClosed) {
         shopingCartView.classList.add('inactive');
         productDetailContainer.classList.add('inactive');
+        darkBg.classList.add('inactive');
     }
     desktopMenuView.classList.toggle('inactive')
 })
@@ -50,6 +54,7 @@ productDetailCloseBtn.addEventListener('click',()=>{
         desktopMenuView.classList.add('inactive');
     }
     productDetailContainer.classList.toggle('inactive');
+    darkBg.classList.add('inactive');
 })
 
 // Creando las products cards
@@ -115,6 +120,7 @@ function renderProducts(arr){
         img.setAttribute('src', product.image)
         img.addEventListener('click', ()=>{
             productDetailContainer.classList.remove('inactive');
+            darkBg.classList.remove('inactive');
         })
     
         const productInfo = document.createElement('div');
